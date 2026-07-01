@@ -28,3 +28,33 @@ function playRound() {
   if (computerChoice == playerChoice) return "draw";
   return "lose";
 }
+
+function startGame() {
+  let round_count = 5;
+  let playerWinCount = 0;
+  let computerWinCount = 0;
+
+  for (let i = 0; i < round_count; i++) {
+    let result = playRound();
+    console.log(
+      `You played ${result.playerChoice} and the computer played ${result.computerChoice}`,
+    );
+    if (result.result == "win") {
+      console.log(`You won round ${i + 1}`);
+      playerWinCount++;
+    } else if (result.result == "lose") {
+      console.log(`You lost round ${i + 1}`);
+      computerWinCount++;
+    } else if (result.result == "draw") {
+      console.log(`You drew round ${i + 1}`);
+    }
+  }
+
+  if (playerWinCount > computerWinCount) {
+    console.log("You won the game :)");
+  } else if (playerWinCount < computerWinCount) {
+    console.log("You lost the game :(");
+  } else {
+    console.log("The game resulted in a tie...");
+  }
+}
