@@ -12,3 +12,19 @@ function getPlayerChoice() {
   if (OPTIONS.includes(result)) return result;
   return getPlayerChoice();
 }
+
+function playRound() {
+  let playerChoice = getPlayerChoice();
+  let computerChoice = getComputerChoice();
+  let output = { result: "", playerChoice: "", computerChoice: "" };
+
+  if (
+    (computerChoice == "rock" && playerChoice == "paper") ||
+    (computerChoice == "paper" && playerChoice == "scissors") ||
+    (computerChoice == "scissors" && playerChoice == "rock")
+  ) {
+    return "win";
+  }
+  if (computerChoice == playerChoice) return "draw";
+  return "lose";
+}
