@@ -1,8 +1,8 @@
 function getComputerChoice() {
-  const result = Math.floor(Math.random() * 3 + 1);
-  if (result === 0) return "rock";
-  if (result === 1) return "paper";
-  if (result === 2) return "scissors";
+  let result = Math.floor(Math.random() * 3 + 1);
+  if (result === 1) return "rock";
+  if (result === 2) return "paper";
+  if (result === 3) return "scissors";
 }
 
 function getPlayerChoice() {
@@ -16,17 +16,24 @@ function getPlayerChoice() {
 function playRound() {
   let playerChoice = getPlayerChoice();
   let computerChoice = getComputerChoice();
-  let output = { result: "", playerChoice: "", computerChoice: "" };
+  let output = {
+    result: "",
+    playerChoice: playerChoice,
+    computerChoice: computerChoice,
+  };
 
   if (
     (computerChoice == "rock" && playerChoice == "paper") ||
     (computerChoice == "paper" && playerChoice == "scissors") ||
     (computerChoice == "scissors" && playerChoice == "rock")
   ) {
-    return "win";
+    output.result = "win";
+  } else if (computerChoice == playerChoice) {
+    output.result = "draw";
+  } else {
+    output.result = "lose";
   }
-  if (computerChoice == playerChoice) return "draw";
-  return "lose";
+  return output;
 }
 
 function startGame() {
@@ -58,3 +65,5 @@ function startGame() {
     console.log("The game resulted in a tie...");
   }
 }
+
+startGame();
