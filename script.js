@@ -1,6 +1,7 @@
 const roundCountInput = document.querySelector("#round-count-input");
 const playerInputSection = document.querySelector("#player-input-section");
 const resultDisplay = document.querySelector("#result-display");
+const roundCountForm = document.querySelector("#round-count-form");
 
 class GameState {
     constructor() {
@@ -106,3 +107,5 @@ playerInputSection.addEventListener("click", (e) => {
         }
     }
 });
+
+roundCountForm.addEventListener("submit", (e) => e.preventDefault());
