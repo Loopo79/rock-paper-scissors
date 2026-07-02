@@ -10,8 +10,10 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
   let result = prompt("Enter rock, paper, or scissors:");
-  result = result.toLowerCase();
-  if (["rock", "paper", "scissors"].includes(result)) return result;
+  if (result !== null) {
+    result = result.toLowerCase();
+    if (["rock", "paper", "scissors"].includes(result)) return result;
+  }
   return getPlayerChoice();
 }
 
