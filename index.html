@@ -1,24 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock Paper Scissors</title>
-    <link rel="icon" href="Assets/icon.svg" />
-    <script defer src="script.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <form id="round-count-form">
-      <label for="round-count">Enter number of round to play:</label>
-      <input id="round-count-input" pattern="\d*" type="text" />
-      <span></span>
-    </form>
-    <div id="player-input-section">
-      <button class="player-input-button" value="rock">Rock</button>
-      <button class="player-input-button" value="paper">Paper</button>
-      <button class="player-input-button" value="scissors">Scissors</button>
-    </div>
-    <pre id="result-display"></pre>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rock Paper Scissors</title>
+        <link rel="icon" href="Assets/icon.svg" />
+        <script defer src="script.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <form id="round-count-form">
+            <label for="round-count">Enter number of round to play:</label>
+            <input id="round-count-input" pattern="\d*" type="text" />
+            <span></span>
+        </form>
+
+        <div id="player-input-section">
+            <button class="player-input-button" value="rock">Rock</button>
+            <button class="player-input-button" value="paper">Paper</button>
+            <button class="player-input-button" value="scissors">
+                Scissors
+            </button>
+        </div>
+        <button class="reset-button">Reset</button>
+        <pre id="result-display"></pre>
+    </body>
 </html>
