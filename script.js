@@ -1,6 +1,7 @@
 const roundCountInput = document.querySelector("#round-count-input");
 const playerInputSection = document.querySelector("#player-input-section");
 const resultDisplay = document.querySelector("#result-display");
+const resetButton = document.querySelector("#reset-button");
 const roundCountForm = document.querySelector("#round-count-form");
 
 class GameState {
@@ -107,5 +108,7 @@ playerInputSection.addEventListener("click", (e) => {
         }
     }
 });
+
+resetButton.addEventListener("click", resetGame);
 
 roundCountForm.addEventListener("submit", (e) => e.preventDefault());
