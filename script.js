@@ -86,23 +86,27 @@ function playRound(playerChoice) {
     State.currentRoundCount++;
 }
 
+function evalGameEnd() {
+    playRound(playerChoice);
+    if (State.playerWinCount > State.computerWinCount) {
+        display("You won the game :)");
+    } else if (State.playerWinCount < State.computerWinCount) {
+        display("You lost the game :(");
+    } else {
+        display("The game resulted in a tie...");
+    }
+    display(`${State.playerWinCount}:${State.computerWinCount}`);
+}
+
 playerInputSection.addEventListener("click", (e) => {
     if (e.target.tagName == "BUTTON") {
         if (!setupGame()) return;
-
         playerChoice = e.target.value;
+
         if (State.currentRoundCount < State.roundCount) {
             playRound(playerChoice);
         } else if (State.currentRoundCount == State.roundCount) {
-            playRound(playerChoice);
-            if (State.playerWinCount > State.computerWinCount) {
-                display("You won the game :)");
-            } else if (State.playerWinCount < State.computerWinCount) {
-                display("You lost the game :(");
-            } else {
-                display("The game resulted in a tie...");
-            }
-            display(`${State.playerWinCount}:${State.computerWinCount}`);
+            evalGameEnd();
         } else {
             resetGame();
         }
