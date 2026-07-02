@@ -1,5 +1,10 @@
 const roundCountInput = document.querySelector("#round-count-input");
 const roundCountForm = document.querySelector("#round-count-form");
+const resultDisplay = document.querySelector("#result-display");
+
+function display(text) {
+  resultDisplay.textContent += text + "\n";
+}
 
 function getComputerChoice() {
   let result = Math.floor(Math.random() * 3 + 1);
@@ -57,28 +62,28 @@ function startGame(round_count) {
 
   for (let i = 0; i < round_count; i++) {
     let result = playRound();
-    console.log(
+    display(
       `You played ${result.playerChoice} and the computer played ${result.computerChoice}`,
     );
     if (result.result == "win") {
-      console.log(`You won round ${i + 1}`);
+      display(`You won round ${i + 1}`);
       playerWinCount++;
     } else if (result.result == "lose") {
-      console.log(`You lost round ${i + 1}`);
+      display(`You lost round ${i + 1}`);
       computerWinCount++;
     } else if (result.result == "draw") {
-      console.log(`You drew round ${i + 1}`);
+      display(`You drew round ${i + 1}`);
     }
   }
 
   if (playerWinCount > computerWinCount) {
-    console.log("You won the game :)");
+    display("You won the game :)");
   } else if (playerWinCount < computerWinCount) {
-    console.log("You lost the game :(");
+    display("You lost the game :(");
   } else {
-    console.log("The game resulted in a tie...");
+    display("The game resulted in a tie...");
   }
-  console.log(`${playerWinCount}:${computerWinCount}`);
+  display(`${playerWinCount}:${computerWinCount}`);
   roundCountInput.disabled = false;
 }
 
