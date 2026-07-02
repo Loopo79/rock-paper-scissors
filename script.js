@@ -5,7 +5,23 @@ const
 
 const resultDisplay = document.querySelector("#result-display");
 
+class GameState {
+    constructor() {
+        this.roundCount = 5;
+        this.currentRoundCount = 1;
+        this.playerWinCount = 0;
+        this.computerWinCount = 0;
+    }
 
+    reset() {
+        this.roundCount = 5;
+        this.currentRoundCount = 1;
+        this.playerWinCount = 0;
+        this.computerWinCount = 0;
+    }
+}
+
+const State = new GameState();
 
 function display(text) {
   resultDisplay.textContent += text + "\n";
