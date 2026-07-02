@@ -24,9 +24,7 @@ const State = new GameState();
 
 function setupGame() {
     let roundCount = Number(roundCountInput.value);
-    if (roundCount !== -1) {
-        State.roundCount = roundCount;
-    }
+    State.roundCount = roundCount;
     if (State.roundCount < 1 || 100 < State.roundCount) {
         alert("Number of round should be between 1 and 100");
         return false;
