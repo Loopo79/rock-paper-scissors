@@ -78,6 +78,7 @@ function startGame(round_count) {
   } else {
     console.log("The game resulted in a tie...");
   }
+  console.log(`${playerWinCount}:${computerWinCount}`);
   roundCountInput.disabled = false;
 }
 
