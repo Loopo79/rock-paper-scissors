@@ -6,6 +6,7 @@ const roundCountForm = document.querySelector("#round-count-form");
 
 class GameState {
     constructor() {
+        this.isRunning = false;
         this.roundCount = 5;
         this.currentRoundCount = 1;
         this.playerWinCount = 0;
@@ -13,6 +14,7 @@ class GameState {
     }
 
     reset() {
+        this.isRunning = false;
         this.roundCount = 5;
         this.currentRoundCount = 1;
         this.playerWinCount = 0;
@@ -23,13 +25,18 @@ class GameState {
 const State = new GameState();
 
 function setupGame() {
+    if (State.isRunning) return true;
+
     let roundCount = Number(roundCountInput.value);
+
     if (roundCount < 1 || 100 < roundCount) {
         alert("Number of round should be between 1 and 100");
         return false;
     }
-    State.roundCount = roundCount;
     roundCountInput.disabled = true;
+    State.roundCount = roundCount;
+
+    State.isRunning = true;
     return true;
 }
 
