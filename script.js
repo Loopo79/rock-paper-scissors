@@ -1,3 +1,6 @@
+const roundCountInput = document.querySelector("#round-count-input");
+const roundCountForm = document.querySelector("#round-count-form");
+
 function getComputerChoice() {
   let result = Math.floor(Math.random() * 3 + 1);
   if (result === 1) return "rock";
@@ -36,10 +39,20 @@ function playRound() {
   return output;
 }
 
-function startGame() {
-  let round_count = 5;
+function getRoundCount() {
+  let roundCount = Number(roundCountInput.value);
+  if (roundCount < 1 || 100 < roundCount) {
+    alert("Number of round should be between 1 and 100");
+    return -1;
+  }
+  return roundCount;
+}
+
+function startGame(round_count) {
   let playerWinCount = 0;
   let computerWinCount = 0;
+
+  roundCountInput.disabled = true;
 
   for (let i = 0; i < round_count; i++) {
     let result = playRound();
@@ -64,6 +77,13 @@ function startGame() {
   } else {
     console.log("The game resulted in a tie...");
   }
+  roundCountInput.disabled = false;
 }
 
-startGame();
+roundCountForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let roundCount = getRoundCount();
+  if (roundCount !== -1) {
+    startGame(roundCount);
+  }
+});
