@@ -100,7 +100,7 @@ function evalGameEnd() {
 playerInputSection.addEventListener("click", (e) => {
     if (e.target.tagName == "BUTTON") {
         if (!setupGame()) return;
-        playerChoice = e.target.value;
+        let playerChoice = e.target.value;
 
         if (State.currentRoundCount < State.roundCount) {
             playRound(playerChoice);
