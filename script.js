@@ -11,8 +11,7 @@ function getComputerChoice() {
 function getPlayerChoice() {
   let result = prompt("Enter rock, paper, or scissors:");
   result = result.toLowerCase();
-  const OPTIONS = ["rock", "paper", "scissors"];
-  if (OPTIONS.includes(result)) return result;
+  if (["rock", "paper", "scissors"].includes(result)) return result;
   return getPlayerChoice();
 }
 
