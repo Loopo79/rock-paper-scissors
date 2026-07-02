@@ -1,6 +1,11 @@
 const roundCountInput = document.querySelector("#round-count-input");
 const roundCountForm = document.querySelector("#round-count-form");
+
+const
+
 const resultDisplay = document.querySelector("#result-display");
+
+
 
 function display(text) {
   resultDisplay.textContent += text + "\n";
