@@ -29,7 +29,7 @@ function setupGame() {
 
     let roundCount = Number(roundCountInput.value);
 
-    if (roundCount < 1 || 100 < roundCount) {
+    if (roundCount < 1 || 100 < roundCount || isNaN(roundCount)) {
         alert("Number of round should be between 1 and 100");
         return false;
     }
