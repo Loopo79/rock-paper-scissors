@@ -7,7 +7,7 @@ const roundCountForm = document.querySelector("#round-count-form");
 class GameState {
     constructor() {
         this.isRunning = false;
-        this.roundCount = 5;
+        this.roundCount = 0;
         this.currentRoundCount = 1;
         this.playerWinCount = 0;
         this.computerWinCount = 0;
@@ -15,7 +15,7 @@ class GameState {
 
     reset() {
         this.isRunning = false;
-        this.roundCount = 5;
+        this.roundCount = 0;
         this.currentRoundCount = 1;
         this.playerWinCount = 0;
         this.computerWinCount = 0;
