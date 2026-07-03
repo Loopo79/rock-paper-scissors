@@ -121,3 +121,5 @@ playerInputSection.addEventListener("click", (e) => {
 resetButton.addEventListener("click", resetGame);
 
 roundCountForm.addEventListener("submit", (e) => e.preventDefault());
+
+roundCountInput.value = "5";
