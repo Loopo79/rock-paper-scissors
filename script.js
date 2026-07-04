@@ -4,25 +4,21 @@ const resultDisplay = document.querySelector("#result-display");
 const resetButton = document.querySelector("#reset-button");
 const roundCountForm = document.querySelector("#round-count-form");
 
-class GameState {
-    constructor() {
+const State = {
+    isRunning: false,
+    roundCount: 0,
+    currentRoundCount: 1,
+    playerWinCount: 0,
+    computerWinCount: 0,
+
+    reset: function () {
         this.isRunning = false;
         this.roundCount = 0;
         this.currentRoundCount = 1;
         this.playerWinCount = 0;
         this.computerWinCount = 0;
-    }
-
-    reset() {
-        this.isRunning = false;
-        this.roundCount = 0;
-        this.currentRoundCount = 1;
-        this.playerWinCount = 0;
-        this.computerWinCount = 0;
-    }
-}
-
-const State = new GameState();
+    },
+};
 
 function setupGame() {
     if (State.isRunning) return true;
